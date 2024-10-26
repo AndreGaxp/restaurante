@@ -3,40 +3,97 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function restaurante() {
   const [contador, setContador] = useState(0)
-  
+  const mesas = [1, 2, 3, 4, 5, 6, 7, 8]
 
-  function adcContador(){
+
+  function adcContador() {
     setContador(cont => cont + 1)
   }
 
-  function rmvContador(){
+  function rmvContador() {
     setContador(cont => (cont > 0 ? cont - 1 : 0))
+  }
+
+  function mesa(){
+    style={
+      sty
+    }
   }
 
   return (
 
     <View style={styles.container}>
-      <Text style={styles.txt}>
-        Pessoas no Restaurante:
-      </Text>
+      <View style={styles.header}>
+        <Text style={styles.txt}>
+          Pessoas no Restaurante:
+        </Text>
 
-      <View style={styles.contador}>
-        <Text style={styles.txtContador}>{contador}</Text>
+        <View style={styles.contador}>
+          <Text style={styles.txtContador}>{contador}</Text>
+        </View>
+
+        <View style={styles.containerBtn}>
+
+          <TouchableOpacity style={styles.btnAdc} onPress={adcContador}>
+            <Text>Adicionar</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.btnRmv} onPress={rmvContador}>
+            <Text>Remover</Text>
+          </TouchableOpacity>
+        </View>
       </View>
 
-      <View style={styles.containerBtn}>
-
-        <TouchableOpacity style={styles.btnAdc} onPress={adcContador}>
-          <Text>Adicionar</Text>
+      {/* ONDE COMEÇA AS MESAS */}
+      <View style={styles.mesas}>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 1
+          </Text>
         </TouchableOpacity>
-
-        <TouchableOpacity style={styles.btnRmv} onPress={rmvContador}>
-          <Text>Remover</Text>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 2
+          </Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.div}/>
+      <View style={styles.mesas}>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 3
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 4
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.mesas}>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 5
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 6
+          </Text>
+        </TouchableOpacity>
+      </View>
+      <View style={styles.mesas}>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 7
+          </Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.mesa}>
+          <Text style={styles.txtMesa}>
+            Mesa 8
+          </Text>
+        </TouchableOpacity>
+      </View>
     </View>
-    
 
   );
 }
@@ -44,9 +101,9 @@ export default function restaurante() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    marginTop: 15,
-    
+  },
+  header: {
+    alignItems: 'center'
   },
   txt: {
     fontSize: 30,
@@ -65,10 +122,10 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     fontSize: 25,
   },
-  containerBtn:{
+  containerBtn: {
     flexDirection: 'row',
   },
-  btnAdc:{
+  btnAdc: {
     alignItems: 'center',
     justifyContent: 'center',
     width: 70,
@@ -77,7 +134,7 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     margin: 7,
   },
-  btnRmv:{
+  btnRmv: {
     alignItems: 'center',
     justifyContent: 'center',
     width: 70,
@@ -86,10 +143,22 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     margin: 7,
   },
-  div:{
-    width: '100%',
-    height: 3,
-    backgroundColor: '#537bc5',
-    marginTop: 10,
+  mesas: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 15,
+  },
+  mesa: {
+    height: 100,
+    width: '40%',
+    backgroundColor: '#a9ff8f',
+    alignItems: 'center',
+    borderRadius: 8,
+  },
+  txtMesa:{
+    fontSize: 25,
+    fontWeight: 'bold',
+marginTop: 5,
   }
+
 })
