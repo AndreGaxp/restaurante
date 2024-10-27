@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native';
 
 export default function restaurante() {
   const [contador, setContador] = useState(0)
@@ -14,8 +14,8 @@ export default function restaurante() {
     setContador(cont => (cont > 0 ? cont - 1 : 0))
   }
 
-  function mesa(){
-    style={
+  function mesa() {
+    style = {
       sty
     }
   }
@@ -44,55 +44,69 @@ export default function restaurante() {
         </View>
       </View>
 
-      {/* ONDE COMEÇA AS MESAS */}
-      <View style={styles.mesas}>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 1
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 2
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.mesas}>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 3
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 4
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.mesas}>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 5
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 6
-          </Text>
-        </TouchableOpacity>
-      </View>
-      <View style={styles.mesas}>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 7
-          </Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.mesa}>
-          <Text style={styles.txtMesa}>
-            Mesa 8
-          </Text>
-        </TouchableOpacity>
-      </View>
+      <ScrollView>
+        {/* ONDE COMEÇA AS MESAS */}
+        <View style={styles.mesas}>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 1
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 2
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.mesas}>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 3
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 4
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.mesas}>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 5
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 6
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.mesas}>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 7
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 8
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.mesas}>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 9
+            </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.mesa}>
+            <Text style={styles.txtMesa}>
+              Mesa 10
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ScrollView>
     </View>
 
   );
@@ -155,10 +169,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 8,
   },
-  txtMesa:{
+  txtMesa: {
     fontSize: 25,
     fontWeight: 'bold',
-marginTop: 5,
+    marginTop: 5,
   }
 
 })
